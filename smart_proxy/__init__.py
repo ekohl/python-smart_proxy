@@ -25,5 +25,5 @@ async def version(request):
 
 @app.route('/puppet/environments')
 async def environments(request):
-    result = []
+    result = ['production']
     return JSONResponse(result)

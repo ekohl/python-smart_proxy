@@ -27,3 +27,9 @@ async def version(request):
 async def environments(request):
     result = ['production']
     return JSONResponse(result)
+
+
+@app.route('/puppet/environments/{environment}/classes')
+async def classes(request):
+    result = []
+    return JSONResponse(result)

@@ -8,5 +8,5 @@ app = Starlette()  # pylint: disable=invalid-name
 
 @app.route('/features')
 async def features(request):
-    result = []
+    result = ['puppet']
     return JSONResponse(result)

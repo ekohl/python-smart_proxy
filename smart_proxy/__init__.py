@@ -31,5 +31,15 @@ async def environments(request):
 
 @app.route('/puppet/environments/{environment}/classes')
 async def classes(request):
-    result = []
+    result = [
+        {
+            'ntp': {
+                'name': 'ntp',
+                'module': None,
+                'params': {
+                    'server': 'ntp.example.com',
+                },
+            },
+        },
+    ]
     return JSONResponse(result)

@@ -49,6 +49,22 @@ async def features(request):
     return JSONResponse(result)
 
 
+@app.route('/v2/features')
+async def features_v2(request):
+    result = {
+        'puppet': {
+            'state': 'running',
+            'http_enabled': True,
+            'https_enabled': True,
+            'capabilities': [],
+            'settings': {
+                'puppet_url': str(PUPPET_URL),
+            },
+        },
+    }
+    return JSONResponse(result)
+
+
 @app.route('/version')
 async def version(request):
     result = {
